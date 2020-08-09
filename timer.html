@@ -1,0 +1,184 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+
+</HEAD>
+
+<BODY onLoad="yourClock()", onUnload="stopClock(); return true">
+<p>&nbsp; </p>
+<table width="293" border="0" align="center" cellpadding="1" cellspacing="2">
+  <tr> 
+    <td width="239" align="center"> <script language=JavaScript>
+	  var tmpDelayM=-1;
+	  var tmpDelayMS=60;
+	  var tmpDelayS=-1;
+	  
+function Year_Month(){
+	var now = new Date();
+	var yy = now.getYear()+1900;
+	var mm = now.getMonth()+1;
+	var cl = '<font color="#0000df">';
+	if (now.getDay() == 0) cl = '<font color="#c00000">';
+	if (now.getDay() == 6) cl = '<font color="#00c000">';
+	return(cl + yy + '年' + mm + '月</font>'); }
+	function Date_of_Today(){
+	var now = new Date();
+	var cl = '<font color="#ff0000">';
+	if (now.getDay() == 0) cl = '<font color="#c00000">';
+	if (now.getDay() == 6) cl = '<font color="#00c000">';
+	return(cl + now.getDate() + '</font>');
+}
+function Day_of_Today(){
+	var day = new Array();
+	day[0] = "星期日";
+	day[1] = "星期一";
+	day[2] = "星期二";
+	day[3] = "星期三";
+	day[4] = "星期四";
+	day[5] = "星期五";
+	day[6] = "星期六";
+	var now = new Date();
+	var cl = '<font color="#0000df">';
+	if (now.getDay() == 0) cl = '<font color="#c00000">';
+	if (now.getDay() == 6) cl = '<font color="#00c000">';
+	return(cl + day[now.getDay()] + '</font>');
+}
+function CurentTime(){
+	var now = new Date();
+	var hh = now.getHours();
+	var mm = now.getMinutes();
+	var ss = now.getTime() % 60000;
+	ss = (ss - (ss % 1000)) / 1000;
+	var clock = hh+':';
+	if (mm < 10) clock += '0';
+	clock += mm+':';
+	if (ss < 10) clock += '0';
+	clock += ss;
+
+	if(tmpDelayM!=-1){
+		tmpDelayMS--;
+		
+		if(tmpDelayM==1 && tmpDelayMS==0){
+			tmpDelayM=-1;
+			alert("Got do something man!");
+		}
+		if(tmpDelayMS==-1){ tmpDelayM--; tmpDelayMS=59; }
+		
+	}
+	else if(tmpDelayS!=-1){
+			tmpDelayS--;
+			if(tmpDelayS==-1){
+				tmpDelayS=-1;
+				alert("Got do something man!");
+			}
+	}
+	else{
+	
+	}
+	
+	return(clock);
+}
+
+function refreshCalendarClock(){
+	document.all.calendarClock1.innerHTML = Year_Month();
+	document.all.calendarClock2.innerHTML = Date_of_Today();
+	document.all.calendarClock3.innerHTML = Day_of_Today();
+	document.all.calendarClock4.innerHTML = CurentTime(); 
+	
+		if(tmpDelayM!=-1){
+			document.all.counter.value=((tmpDelayM-1)==0?"":(tmpDelayM-1))+((tmpDelayM-1)==0?"":"  Minutes") +((tmpDelayM-1)==0?"":" ")+tmpDelayMS + " Seconds";
+		}
+		else if(tmpDelayS!=-1){
+			document.all.counter.value=tmpDelayS+"  Seconds";
+		}
+		else{
+			document.all.counter.value="No Timer";
+		}
+			
+	}
+	var webUrl = webUrl;
+	document.write('<table border="0" cellpadding="0" cellspacing="0"><tr><td>');
+	document.write('<table id="CalendarClockFreeCode" border="0" cellpadding="0" cellspacing="0" width="60" height="70" ');
+	document.write('style="position:absolute;visibility:hidden" bgcolor="#eeeeee">');
+	document.write('<tr><td align="center"><font ');
+	document.write('style="cursor:hand;color:#ff0000;font-family:宋体;font-size:14pt;line-height:120%" ');
+	if (webUrl != 'netflower'){
+		document.write('</td></tr><tr><td align="center"><font ');
+		document.write('style="cursor:hand;color:#2000ff;font-family:宋体;font-size:9pt;line-height:110%" ');
+	}
+
+document.write('</td></tr></table>');
+document.write('<table border="0" cellpadding="0" cellspacing="0" width="61" bgcolor="#C0C0C0" height="70">');
+document.write('<tr><td valign="top" width="100%" height="100%">');
+document.write('<table border="1" cellpadding="0" cellspacing="0" width="58" bgcolor="#FEFEEF" height="67">');
+document.write('<tr><td align="center" width="100%" height="100%" >');
+document.write('<font id="calendarClock1" style="font-family:宋体;font-size:7pt;line-height:120%"> </font><br>');
+document.write('<font id="calendarClock2" style="color:#ff0000;font-family:Arial;font-size:14pt;line-height:120%"> </font><br>');
+document.write('<font id="calendarClock3" style="font-family:宋体;font-size:9pt;line-height:120%"> </font><br>');
+document.write('<font id="calendarClock4" style="color:#100080;font-family:宋体;font-size:8pt;line-height:120%"> <b> </b></font>');
+document.write('</td></tr></table>');
+document.write('</td></tr></table>');
+document.write('</td></tr></table>');
+setInterval('refreshCalendarClock()',1000);
+
+function AddTimer(){
+
+var tmpRet=checkTimerFormat();
+if(tmpRet==-1){
+	alert("Keyed in wrong format");
+}
+else{ }
+
+}
+	
+function checkTimerFormat(){
+	var tmpV=document.all.time.value;
+	var tmpRet=1;
+
+	if((tmpV.search(":m")==-1 && tmpV.search(":M")==-1) && (tmpV.search(":s")==-1 && tmpV.search(":S")==-1)){
+		tmpRet = -1;
+	}
+	else if( isNaN( parseInt(tmpV.substr(0,tmpV.length-2)))){
+		alert(tmpV.substr(0,tmpV.length-2));
+		tmpRet = -1;
+	}
+	
+	if(tmpRet==-1){
+		return -1;
+	}
+	else{
+		if(tmpV.search(":m")!=-1 || tmpV.search(":M")!=-1){
+			tmpDelayM =	tmpV.substr(0,tmpV.length-2);
+			tmpDelayMS = 60;
+		}
+		else{
+			tmpDelayS =	tmpV.substr(0,tmpV.length-2);
+		}
+		return	1;
+	}
+}
+</script> </td>
+    <td width="44">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td>&nbsp; </td>
+    <td align="center">&nbsp; </td>
+  </tr>
+  <tr valign="bottom"> 
+    <td width="300" align="left" nowrap> 
+      <input name="time" type="text" id="time" size="20">
+      # (n:M or nn:S)</td>
+    <td align="center"> 
+      <input type="submit" name="Submit" value="Add" onClick="AddTimer()"></td>
+  </tr>
+  <tr> 
+    <td>
+        <input name="counter" type="text" id="counter" size="20">
+        : Left 
+      </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

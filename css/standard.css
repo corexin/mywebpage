@@ -1,0 +1,58 @@
+#Body
+{
+	width:80%;
+	height:100%;
+	margin-left:auto;
+	margin-right:auto;
+	border: 1px solid red;	
+}
+#Body #Heading
+{
+	width:100%;
+	background-color:
+	pading:10px;
+	border-bottom:1px solid gray;	
+}
+
+#Body a
+{
+	text-decoration:none
+}
+#Body a:hover
+{
+	text-decoration:underline;
+}
+
+#Body #Left
+{
+	margin: 10px 0px 0px 5px;
+	width:100px;
+	height:100%;
+	border-right:1px solid gray;
+	float:left;
+	background-color:	
+}
+#Body #Right
+{
+	display:inline;
+	margin: 40px 10px 10px 20px;
+	width:100%
+    border:1px solid red;
+    float:left;
+}	
+#Body #Left #MenuHeading
+{
+	text-align:center;
+	color:blue;
+	background-color:#ffc;
+	font-size:150%;
+	width:100%;
+}
+#Body #Left ul {
+	padding:0;
+	list-style:none;
+}
+#Body #Left ul li {
+	display:block;
+	padding-left:5px;
+}

@@ -1,0 +1,47 @@
+[Options]
+Highlight=0
+SaveSession=1
+DialogFont=Tahoma
+ExternPath=http://www.ausezone.com/
+LocalPath=G:\personal Web\
+LocalPort=
+FTPcfname=55
+FTPPassive=1
+FTPHost=ftp.ausezone.com
+FTPPort=21
+FTPUser=jiangqq@yahoo.com
+FTPServerPath=/
+FindText=09/03/2007
+ReplaceText=
+BrowserPath=http://www.ausezone.com//css/style.css
+Font=Courier New
+Parameters=-q -s -w -h
+FTPPasswordSave=8cU32t/Qr/kq9J5J
+[Registry]
+css=0
+html=0
+js=0
+sql=0
+php=0
+multi=0
+[Documentation]
+Filename=
+Lang=en
+[UPDATE]
+Version=
+Download=
+Description=
+[Edit]
+Edge=80
+[Externals]
+Last=0
+[History]
+Last=3
+1=G:\personal Web\index.php
+2=G:\personal Web\admin.php
+3=G:\personal Web\css\style.css
+[Session]
+Last=2
+1=G:\personal Web\index.php
+2=G:\personal Web\css\style.css
+Active=1

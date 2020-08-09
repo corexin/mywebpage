@@ -1,0 +1,180 @@
+
+<!-- THREE STEPS TO INSTALL LAYERED DROP DOWN MENU:
+
+
+
+  1.  Copy the coding into the HEAD of your HTML document
+
+  2.  Add the onLoad event handler into the BODY tag
+
+  3.  Put the last coding into the BODY of your HTML document  -->
+
+
+
+<!-- STEP ONE: Paste this code into the HEAD of your HTML document  -->
+
+
+
+<HEAD>
+
+
+
+<!-- This script and many more are available free online at -->
+
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Original:  Daren Craddock (darencraddock@hotmail.com) -->
+
+<!-- Web Site:  http://www.birkdale.sheffield.sch.uk -->
+
+
+
+<script language="JavaScript">
+
+<!-- hide script from old browsers
+
+// Script to create a drop-down menu effect using layers.
+
+//(c)Copyright Daren Craddock 2002
+
+//You may use this code in any application, no limits,
+
+//provided that you acknowledge Daren Craddock as the originator.
+
+
+
+// big() makes selected layer longer (height property)
+
+function big(lyr) {
+
+document.all[lyr].style.height='180px'; }
+
+/* small() makes selected layer shorter (height property)*/
+
+function small(lyr) {
+
+document.all[lyr].style.height='32px';
+
+}
+
+/* start() makes all layers short to start with (height property)*/
+
+function start() {
+
+document.all.Layer1.style.height='32px';
+
+document.all.Layer2.style.height='32px';
+
+document.all.Layer3.style.height='32px'; }
+
+//-- !>
+
+</script>
+
+</HEAD>
+
+
+
+<!-- STEP TWO: Insert the onLoad event handler into your BODY tag  -->
+
+
+
+<BODY onLoad="start()">
+
+
+
+<!-- STEP THREE: Copy this code into the BODY of your HTML document  -->
+
+
+
+<div id="Layer1" style="position:absolute; width:155px; height:180px; z-index:1; left: 74px; top: 38px; background-color: #FFFFCC; layer-background-color: #FFFFCC; border: 1px none #000000; overflow: hidden" onMouseOver="big('Layer1')"; onMouseOut="small('Layer1')"> 
+
+  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">
+
+    <a href="menu1.html">Menu 1</a>
+
+    <br>
+
+    <br>
+
+    <a href="link1.html">Link 1</a><br>
+
+    <br>
+
+    <a href="link2.html">Link 2</a><br>
+
+    <br>
+
+    <a href="link3.html">Link 3</a><br>
+
+    <br>
+
+    <a href="link4.html">Link 4</a></font></div>
+
+</div>
+
+<div id="Layer2" style="position:absolute; width:155px; height:180px; z-index:1; left: 236px; top: 38px; background-color: #FFFFCC; layer-background-color: #FFFFCC; border: 1px none #000000; overflow: hidden" onMouseOver="big('Layer2')"; onMouseOut="small('Layer2')"> 
+
+  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">
+
+    <a href="menu2.html">Menu 2</a>
+
+    <br>
+
+    <br>
+
+    <a href="link5.html">Link 5</a><br>
+
+    <br>
+
+    <a href="link6.html">Link 6</a><br>
+
+    <br>
+
+    <a href="link7.html">Link 7</a><br>
+
+    <br>
+
+    <a href="link8.html">Link 8</a></font></div>
+
+</div>
+
+<div id="Layer3" style="position:absolute; width:155px; height:180px; z-index:1; left: 398px; top: 38px; background-color: #FFFFCC; layer-background-color: #FFFFCC; border: 1px none #000000; overflow: hidden" onMouseOver="big('Layer3')"; onMouseOut="small('Layer3')"> 
+
+  <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif">
+
+    <a href="menu3.html">Menu 3</a>
+
+    <br>
+
+	<br>
+
+    <a href="link9.html">Link 9</a><br>
+
+    <br>
+
+    <a href="link10.html">Link 10</a><br>
+
+    <br>
+
+    <a href="link11.html">Link 11</a><br>
+
+    <br>
+
+    <a href="link12.html">Link 12</a></font></div>
+
+</div>
+
+
+
+<p><center>
+
+<font face="arial, helvetica" size"-2">Free JavaScripts provided<br>
+
+by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
+
+</center><p>
+
+
+
+<!-- Script Size:  3.83 KB -->

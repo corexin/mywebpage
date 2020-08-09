@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
+<head>
+  <title>Australia E Zone</title>
+	<META NAME="ROBOTS" CONTENT="NOARCHIVE">
+	<META name="keywords" content="Australia, Entertainment, E, online, Zone, Community, friend, BBS, Bulletin board, post, girl, photo, picture, advertise"> 
+	<META name="description" content="Australia Online Community.">
+	<meta content="Dev-PHP 2.0.10" name="GENERATOR">
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<link rel="stylesheet" type="text/css" href="css/style.css" /> 
+
+</head>
+
+<body>
+
+<table >
+  <tr align="left"> 
+    <td height="30"><img src="images/logo.jpg" width="70" height="60"> </td>
+    <td height="30" align="center" nowrap> 
+      <script type="text/javascript"><!--
+google_ad_client = "pub-0581979141572125";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as_rimg";
+google_cpa_choice = "CAAQycb8zwEaCNrmdvgKt1bFKJnA93M";
+google_ad_channel = "";
+//--></script> <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+    <td height="30"><img src="images/logo_java.jpg" width="60" height="70"></td>
+  </tr>
+  <tr> 
+    <td width="26" rowspan="4" valign="top"> 
+      <p><strong>Links</strong> </p>
+      <p><a href="http://www.hxfd.cn/" target="_blank">RedStar Chinese Restaurant</a></p></td>
+    <td width="620" height="30" align="left" nowrap bgcolor="#66ccff"><a href="http://www.ausezone.com" target="_self">Home</a> 
+      | <a href="myspace/myspace.php" target="_self">My Space</a> | <a href="forum.php" target="_blank">Public 
+      Forum</a> | <a href="index.php" onClick="window.external.addFavorite('http://www.ausezone.com/','Austria E Zone')" target="_self">AddToFaverate</a>| 
+      <a href="feedback.php" target="_blank">FeedBack</a> | <a href="event.php" target="_blank">Events</a> 
+    </td>
+    <td width="26" rowspan="4" valign="top"> <p><strong>MyProgs</strong></p>
+      <p><a href="timer.html" target="_blank">JavaScript Timer</a></p>
+      <p><a href="myProgram/weather.zip">Perl Weather</a></p></td>
+  </tr>
+  <tr> 
+    <td width="620" height="30" align="left" valign="middle" nowrap> 
+      <form action="verify.php" method="post" name="form1" target="_self">
+        Username: 
+        <input name="username" type="text" id="username" size="15">
+        Password: 
+        <input name="password" type="password" id="password" size="15">
+        <input name="Submit" type="submit" id="Submit" value="Submit">
+        <input name="Submit" type="reset" id="Submit" value="Cancel">
+        <a href="register.php" target="_blank">New User</a> </form></td>
+  </tr>
+  <tr> 
+    <td> 
+      <?php
+
+					require("lib.php");
+					$lnk = login();
+					if($lnk){
+					
+						  $query = "select news,date from news order by newsid desc limit 1";
+						  $result = mysql_query($query);
+						  $row = mysql_fetch_row($result);
+						  echo("$row[0]");
+						  echo("<br>");
+						  echo("$row[1]");								
+												  
+					}
+					else{
+						echo("Database Connection Error");
+
+					}
+					logout($lnk);		
+				?>
+			
+			
+			</td>
+  </tr>
+
+  <tr> 
+    <td align="center"> <hr align="center" width="100%"> <p> MSN: asianboycn@hotmail.com 
+        | QQ: 80740539</p>
+      <p align="center">Copyright (C) 2006 <a href="mailto:admin@ausezone.com" target="_blank">CHAO 
+        JIANG</a> <font size="1">updated 22/10/2006</font></p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+</html>
